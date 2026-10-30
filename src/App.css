@@ -108,3 +108,111 @@
   0%, 100% {transform: translateY(0);}
   50% {transform: translateY(-6px);}
 }
+
+.card {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 8%;
+  height: 84%;
+  z-index: 2;
+
+  perspective: 1200px;
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgba(90, 62, 54, 0.15);
+
+
+}
+
+.card-inside {
+  position: absolute;
+  inset: 0;
+  padding: 1rem 1.2rem;
+  background: #fffdf8;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  text-align: center;
+}
+
+.card-inside::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.card-small {
+  margin: 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.card-title {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--seal);
+}
+
+.card-name {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.card-message {
+  margin: 0.3rem 0 0;
+  max-width: 26ch;
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+.card-sign{
+  margin: 0.2rem 0 0;
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: var(--seal);
+}
+
+.card-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: 4px;
+
+  background-color: #f1b3bc;
+  background-image: 
+  radial-gradient(rgba(255, 255, 255, 0.45) 1.5px, transparent 1.5px),
+  linear-gradient(135deg, #f6c6cc, #e99ea9)
+  ;
+  background-size: 14px 14px, 100% 100%;
+
+  display: grid;
+  place-items: center;
+
+  transform-origin: top center;
+  transform-style: preserve-3d;
+}
+
+.card-cover-text{
+  font-family: var(--font-hand);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fffaf2;
+  text-shadow: 0 2px 6px rgba(124, 34, 44, 0.25);
+
+  backface-visibility: hidden;
+}

@@ -1,0 +1,30 @@
+.balloons{
+    position: fixed;
+    inset:0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -160px;
+    width: 46px;
+    height: 58px;
+
+    border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
+    background: 
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.65), transparent 35%),
+    var(--balloon);
+    box-shadow: inset -6px -8px 0 rgba(0, 0, 0, 0.07);
+}
+
+.balloon::before{
+    content: '';
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    width: 1px;
+    height: 80px;
+    background: rgba(90, 62, 54, 0.35);
+}

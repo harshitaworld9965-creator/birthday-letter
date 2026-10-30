@@ -2,6 +2,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react"
 import "./App.css";
+import Balloons from "./Balloons";
 
 gsap.registerPlugin(useGSAP);
 
@@ -65,11 +66,32 @@ function App() {
         stagger:0.12,
         ease:'power2.out',
       }, '-=0.4')
+
+      .to('.balloon', {
+        y: () => -(window.innerHeight + 250),
+        duration: () => gsap.utils.random(5,8),
+        ease:'none',
+        stagger: {each: 0.15, from: 'random'},
+      }, '<')
+      .to('.balloon', 
+        {
+          x:() => gsap.utils.random(-40,40),
+          rotation:() => gsap.utils.random(-12, 12),
+          duration:2,
+          ease:'sine.inOut',
+          yoyo:true,
+          repeat:3,
+          stagger:{each:0.15, from:'random'},
+        },
+        '<'
+      )
+
     }, {scope: scene}
   )
 
   return (
     <main className="scene" ref={scene}>
+      <Balloons />
       <div className="envelope">
         <div className="envelope-back"></div>
 
